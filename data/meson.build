@@ -44,15 +44,6 @@ desktop_in_file = configure_file(
     configuration: config_data
 )
 
-desktop_file = i18n.merge_file(
-    input: desktop_in_file,
-    output: 'io.elementary.code.desktop',
-    po_dir: meson.project_source_root () / 'po' / 'extra',
-    type: 'desktop',
-    install_dir: get_option('datadir') / 'applications',
-    install: true
-)
-
 i18n.merge_file(
     input: 'code.metainfo.xml.in',
     output: meson.project_name() + '.metainfo.xml',
